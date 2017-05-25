@@ -2,6 +2,9 @@ package com.elk.kotlindemo
 
 import android.app.Application
 import com.elk.kotlindemo.di.component.ApiComponent
+import com.elk.kotlindemo.di.component.DaggerApiComponent
+import com.elk.kotlindemo.di.module.ApiModule
+import com.elk.kotlindemo.di.module.AppModule
 import javax.inject.Inject
 
 /**
@@ -25,7 +28,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
+        DaggerApiComponent.builder().apiModule(ApiModule()).appModule(AppModule(this)).build().inject(this);
     }
 
 

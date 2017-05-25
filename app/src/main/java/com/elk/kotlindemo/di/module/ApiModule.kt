@@ -28,7 +28,7 @@ import java.io.File
  * date   2017/5/24
  * author   maimingliang
  */
-@Module(includes = arrayOf(ApiModule::class))
+@Module(includes = arrayOf(AppModule::class))
 class ApiModule{
 
     @Provides fun provideRetrofit(baseUrl: HttpUrl, client: OkHttpClient, gson: Gson) =
