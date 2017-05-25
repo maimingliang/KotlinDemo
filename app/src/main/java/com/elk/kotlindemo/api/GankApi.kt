@@ -1,5 +1,11 @@
 package com.elk.kotlindemo.api
 
+import com.elk.kotlindemo.bean.FuckGoods
+import com.elk.kotlindemo.mvp.contract.JsonResult
+import retrofit2.http.GET
+import retrofit2.http.Path
+import rx.Observable
+
 /**
  *
  * 类       名:
@@ -13,5 +19,10 @@ package com.elk.kotlindemo.api
  */
 interface GankApi{
 
+    /**
+     * 手气不错
+     */
+    @GET("random/data/{type}/1")
+    fun getRandom(@Path("path") type: String): Observable<JsonResult<List<FuckGoods>>>
 }
 
