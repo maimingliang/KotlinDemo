@@ -1,19 +1,19 @@
 package com.elk.kotlindemo.ui.activity
 
 import android.databinding.DataBindingUtil
+import android.databinding.ViewDataBinding
 import android.os.Bundle
 import com.elk.kotlindemo.R
 import com.elk.kotlindemo.bean.FuckGoods
-import com.elk.kotlindemo.databinding.ActivityMainBinding
 import com.elk.kotlindemo.di.component.RandomModule
 import com.elk.kotlindemo.getMainComponent
 import com.elk.kotlindemo.mvp.contract.RandomContract
 
-class MainActivity : BaseBindingActivity<ActivityMainBinding>(),RandomContract.View {
+class MainActivity : BaseBindingActivity<ViewDataBinding>(), RandomContract.View {
 
 
 
-    override fun createBindingView(savedInstanceState: Bundle?): ActivityMainBinding {
+    override fun createBindingView(savedInstanceState: Bundle?): ViewDataBinding {
         return DataBindingUtil.setContentView(this, R.layout.activity_main)
     }
 

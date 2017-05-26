@@ -2,7 +2,6 @@ package com.elk.kotlindemo.di.module
 
 import android.content.Context
 import android.util.Log
-import com.elk.kotlindemo.api.GankApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -23,7 +22,7 @@ import java.io.File
  * 说       明:
  * 修 改 记 录:
  * 版 权 所 有:   Copyright © 2017
- * 公       司:   深圳市旅联网络科技有限公司
+ * 公       司:
  * version   0.1
  * date   2017/5/24
  * author   maimingliang
@@ -62,5 +61,5 @@ class ApiModule{
     }
 
     @Provides fun provideGson() = GsonBuilder().create()
-    @Provides fun provideApi(retrofit: Retrofit) = retrofit.create(GankApi::class.java)
+//    @Provides fun provideApi(retrofit: Retrofit) = retrofit.create(GankApi::class.java)
 }

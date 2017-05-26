@@ -13,7 +13,7 @@ import javax.inject.Inject
  * 说       明:
  * 修 改 记 录:
  * 版 权 所 有:   Copyright © 2017
- * 公       司:   深圳市旅联网络科技有限公司
+ * 公       司:
  * version   0.1
  * date   2017/5/24
  * author   maimingliang
@@ -28,7 +28,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        DaggerApiComponent.builder().apiModule(ApiModule()).appModule(AppModule(this)).build().inject(this);
+        DaggerApiComponent.builder().apiModule(ApiModule()).appModule(AppModule(this)).build().inject(this)
     }
 
 
