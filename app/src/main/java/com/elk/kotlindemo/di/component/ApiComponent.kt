@@ -22,4 +22,5 @@ interface ApiComponent{
     fun inject(app: App)
 
     fun plus(module: RandomModule):RandomComponent
+     fun plus(module: FuckGoodsModule):FuckGoodsComponent
 }

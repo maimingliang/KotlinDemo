@@ -19,7 +19,8 @@ import javax.inject.Inject
  */
 
 class FuckGoodsPresenter
-@Inject constructor(private val mModel: FuckGoodsModel,private val mView: FuckGoodsContract.View): FuckGoodsContract.Presenter,BasePresenter(){
+@Inject constructor(private val mModel: FuckGoodsModel,
+                    private val mView: FuckGoodsContract.View): FuckGoodsContract.Presenter,BasePresenter(){
     override fun getData(page: Int, type: String) {
         addSubscription(mModel.getData(page, type).observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

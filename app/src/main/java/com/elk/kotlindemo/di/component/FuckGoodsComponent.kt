@@ -20,10 +20,11 @@ import dagger.Subcomponent
 @Subcomponent(modules = arrayOf(FuckGoodsModule::class))
 interface FuckGoodsComponent {
     fun inject(fragment: AndroidFragment)
-}
+
+ }
 
 @Module
-class FuckGoodsModule( private val mView: FuckGoodsContract.View){
+class FuckGoodsModule(private val mView: FuckGoodsContract.View){
     @Provides fun getView() = mView
 }
 

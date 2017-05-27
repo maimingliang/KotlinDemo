@@ -8,10 +8,13 @@ import com.elk.kotlindemo.bean.FuckGoods
 import com.elk.kotlindemo.di.component.RandomModule
 import com.elk.kotlindemo.getMainComponent
 import com.elk.kotlindemo.mvp.contract.RandomContract
+import com.elk.kotlindemo.mvp.presenter.RandomPresenter
+import javax.inject.Inject
 
 class MainActivity : BaseBindingActivity<ViewDataBinding>(), RandomContract.View {
 
 
+    @Inject lateinit var mPresenter: RandomPresenter
 
     override fun createBindingView(savedInstanceState: Bundle?): ViewDataBinding {
         return DataBindingUtil.setContentView(this, R.layout.activity_main)

@@ -16,7 +16,7 @@ import rx.Observable
  * author   maimingliang
  */
 
-class FuckGoodsContract {
+interface FuckGoodsContract {
     interface View {
         fun  setData(results: List<FuckGoods>)
 
