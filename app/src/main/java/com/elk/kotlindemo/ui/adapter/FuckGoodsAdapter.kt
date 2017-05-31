@@ -1,11 +1,11 @@
 package com.elk.kotlindemo.ui.adapter
 
 import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.elk.kotlindemo.R
 import com.elk.kotlindemo.bean.FuckGoods
+import com.elk.kotlindemo.databinding.ItemFuckgoodsBinding
 
 /**
  *
@@ -19,13 +19,18 @@ import com.elk.kotlindemo.bean.FuckGoods
  * author   maimingliang
  */
 
-class FuckGoodsAdapter(private val mList: List<FuckGoods>) : BaseBindingAdapter<ViewDataBinding>() {
+class FuckGoodsAdapter(private val mList: List<FuckGoods>) : BaseBindingAdapter<ItemFuckgoodsBinding>() {
     override fun getItemCount(): Int {
         return mList.size
     }
 
+    override fun onBindViewHolder(holder: DataBoundViewHolder<ItemFuckgoodsBinding>?, position: Int) {
+        super.onBindViewHolder(holder, position)
+        holder?.binding?.fuckgoods = mList.get(position)
+        holder?.binding?.executePendingBindings()
+    }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): DataBoundViewHolder<ViewDataBinding> {
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): DataBoundViewHolder<ItemFuckgoodsBinding> {
 
         return DataBoundViewHolder(DataBindingUtil
                 .inflate(LayoutInflater.from(parent?.context),R.layout.item_fuckgoods,parent,false))

@@ -28,7 +28,7 @@ data class FuckGoods(
         return images != null
     }
 
-    fun create() = createAt.substring(0, 10)
+    fun create() = createAt?.substring(0, 10)
 
 
 }

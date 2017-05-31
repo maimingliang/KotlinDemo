@@ -24,11 +24,14 @@ class App : Application() {
         instance = this
      }
 
-    @Inject lateinit var apiCompontent: ApiComponent
+    @Inject
+    lateinit var apiCompontent: ApiComponent
 
     override fun onCreate() {
         super.onCreate()
+
         DaggerApiComponent.builder().apiModule(ApiModule()).appModule(AppModule(this)).build().inject(this)
+
     }
 
 

@@ -18,12 +18,11 @@ import dagger.Subcomponent
  * author   maimingliang
  */
 @Subcomponent(modules = arrayOf(RandomModule::class))
-interface RandomComponent{
+interface RandomComponent {
     fun inject(activity: MainActivity)
 }
 
-
 @Module
-class RandomModule(private val mView: RandomContract.View){
+class RandomModule(private val mView: RandomContract.View) {
     @Provides fun getView() = mView
 }

@@ -2,6 +2,7 @@ package com.elk.kotlindemo.di.module
 
 import android.content.Context
 import android.util.Log
+import com.elk.kotlindemo.api.GankApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -61,5 +62,5 @@ class ApiModule{
     }
 
     @Provides fun provideGson() = GsonBuilder().create()
-//    @Provides fun provideApi(retrofit: Retrofit) = retrofit.create(GankApi::class.java)
+    @Provides fun provideApi(retrofit: Retrofit) = retrofit.create(GankApi::class.java)
 }
